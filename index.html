@@ -11,7 +11,7 @@
     <title>Estadisticas Covid-19</title>
   </head>
   <body>
-      <div class="container-fluid">
+      <div class="container-fluid" id="app">
           <header class="row bg-dark p-3 text-white">
               <div class="col-sm-12 col-md-4">
                 <div class="media">
@@ -22,6 +22,7 @@
                     <div class="media-body">
                      <h5 class="display-5 mt-4">
                          Estadisticas Covid-19
+                         {{message}}
                      </h5>
                     </div>
                   </div>
@@ -206,5 +207,13 @@
     <script>https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js</script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+      <script type="text/JavaScript">
+          var vueApp=new Vue({
+            el: "#app",
+            data:{
+              message: "hola"
+            }
+          })
+      </script>
   </body>
 </html>
