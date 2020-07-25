@@ -34,10 +34,8 @@
                    Aqui encontrara informacion de casos de contagio, decesos, recuperados y tasa de mortalidad entre otros
                    <br>
                    <select class="custom-select">
-                    <option selected="">Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                     <option v-for="pais in paisesList" :value="pais.code">{{pais.name}}</option>
+                 
                   </select>
                   
                     </div>
