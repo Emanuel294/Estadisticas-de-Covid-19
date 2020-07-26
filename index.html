@@ -181,11 +181,13 @@
                     </h4>
                     <h5 class="card-subtitle mb-2 display-5">
                       <strong>
-                        Casos Fallecidos
-                      </strong>
+                        Casos Fallecidos <br> {{paisDatos.latest_data.deaths}}</strong>
                     </h5>
                     <p class="card-text">
-                    ####
+                      {{
+                        parseFloat(
+                          paisDatos.latest_data.calculated.death_rate).toFixed(2)
+                      }}%
                     </p>
           
                   </div>
