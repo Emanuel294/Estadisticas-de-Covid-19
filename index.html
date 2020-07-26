@@ -162,7 +162,11 @@
                       </strong>
                     </h5>
                     <p class="card-text">
-                    {{paisDatos.latest_data.recovered}}
+                    {{paisDatos.latest_data.recovered}}, 
+                    {{
+                      parseFloat(
+                        paisDatos.latest_data.calculated.recovery_rate ).toFixed(2)
+                    }}%
                     </p>
           
                   </div>
