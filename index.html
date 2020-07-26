@@ -33,7 +33,7 @@
                     <div class="media-body">
                    Aqui encontrara informacion de casos de contagio, decesos, recuperados y tasa de mortalidad entre otros
                    <br>
-                   <select class="custom-select" v-model="paisCode">
+                   <select class="custom-select" v-model="paisCode" @change="paisSeleccionado()">
                      <option v-for="pais in paisesList" :value="pais.code">{{pais.name}}</option>
                  
                   </select>
@@ -230,7 +230,18 @@
               .then(function(response){
                 vueApp.paisesList = response.data.data;
               });
+            },
+            methods:{
+              paisSeleccionado: function(){
+                vueApp.paisDatos=[];
+                var url="https://corona-api.com/countries/" + vueApp.paisCode;
+                axios.get(url, {header:{"accept":"application/json"}})
+                .then(function(response){
+                vueApp.paisDatos = response.data.data;
+               });
+              }
             }
+
           })
       </script>
   </body>
